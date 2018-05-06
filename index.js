@@ -14,7 +14,7 @@ function randomBetween(max, min = 0n) {
   const count = calculatePrecision(range);
   let random = new Array(Number(count))
     .fill(0)
-    .map(() => BigInt(Math.random() * (2 ** 32)))
+    .map(() => BigInt(Math.floor(Math.random() * (2 ** 32))))
     .map((int, index) => int << (BigInt(index) * 32n))
     .reduce((acc, int) => acc + int, 0n);
 
