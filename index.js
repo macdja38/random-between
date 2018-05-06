@@ -14,19 +14,19 @@ function randomBetween(max, min = 0n) {
   const count = calculatePrecision(range);
   let random = new Array(Number(count))
     .fill(0)
-    .map(() => BigInt(Math.random() * (2 ** 52)))
-    .map((int, index) => int << (BigInt(index) * 52n))
+    .map(() => BigInt(Math.random() * (2 ** 32)))
+    .map((int, index) => int << (BigInt(index) * 32n))
     .reduce((acc, int) => acc + int, 0n);
 
 
   let bitCount = countBits(range);
-  let minRandom = random >> ((52n * count) - bitCount);
+  let minRandom = random >> ((32n * count) - bitCount);
   if (minRandom > range) return randomBetween(max, min);
   else return minRandom + min;
 }
 
 function calculatePrecision(range) {
-  const result = range >> 52n;
+  const result = range >> 32n;
   if (result >= 1n) {
     return calculatePrecision(result) + 1n;
   }
