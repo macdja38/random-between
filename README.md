@@ -1,6 +1,6 @@
 Calculates a random BigInt within a set range
 
-Note that BigInts are currently not supported in very many browsers, and are not supported in node v10.0
+Note that BigInts are currently not supported in very many browsers, and were first supported in node 10.4
 
 ```
 const randomBetween = require("random-between");

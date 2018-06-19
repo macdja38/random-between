@@ -1,6 +1,6 @@
 {
   "name": "random-between",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "repository": "github:macdja38/random-between",
   "description": "Generates a random number between two bigInts",
   "main": "index.js",
